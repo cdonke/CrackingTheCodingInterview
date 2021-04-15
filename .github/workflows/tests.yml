@@ -20,10 +20,10 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Restore dependencies
-      run: dotnet restore ./Algorithms      
+      run: dotnet restore ./CrackingTheCodingInterview      
       
     - name: Build
-      run: dotnet build --no-restore --configuration Release ./Algorithms  
+      run: dotnet build --no-restore --configuration Release ./CrackingTheCodingInterview  
 
 
   Tests:
@@ -39,12 +39,12 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Test
-      run: dotnet test --verbosity normal --logger "liquid.md" ./Algorithms.Tests    
+      run: dotnet test --verbosity normal --logger "liquid.md" ./CrackingTheCodingInterview.Tests    
       
     - name: Copy result files
       run: |
         [ ! -d "~/test-artifacts" ] && mkdir ~/test-artifacts
-        cp -f ./Algorithms.Tests/TestResults/*.md ~/test-artifacts
+        cp -f ./CrackingTheCodingInterview.Tests/TestResults/*.md ~/test-artifacts
 
     - name: Upload Results Artifact
       uses: actions/upload-artifact@v2.2.2

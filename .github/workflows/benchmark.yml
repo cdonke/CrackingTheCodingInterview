@@ -15,4 +15,4 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Run Benchmark
-      run: dotnet run --configuration Release --project ./Algorithms/ -- --artifacts ./BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
+      run: dotnet run --configuration Release --project ./CrackingTheCodingInterview/ -- --artifacts ./BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
