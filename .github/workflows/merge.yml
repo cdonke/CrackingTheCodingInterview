@@ -1,0 +1,30 @@
+# This is a basic workflow to help you get started with Actions
+
+name: Manually Merge Tests
+
+# Controls when the action will run. 
+on:  
+  workflow_dispatch:
+
+
+# A workflow run is made up of one or more jobs that can run sequentially or in parallel
+jobs:
+  Merge_Results:
+    runs-on: ubuntu-latest
+    steps:     
+    - uses: actions/checkout@v2    
+    
+    - name: Merge benchmarks with READMEs
+      run: |
+        cd ./TestResults/Benchmark
+        ./merge.sh
+        
+    - name: Push results to repo
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add ./TestResults/ -f
+        git add .
+        git commit -m "Updating READMEs"
+        git push

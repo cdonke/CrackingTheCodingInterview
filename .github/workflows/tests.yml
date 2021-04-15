@@ -1,0 +1,119 @@
+name: Unit Tests and Benchmark
+
+on:
+  push:
+    branches: [ master ]
+  pull_request:
+    branches: [ master ]
+  workflow_dispatch:
+
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+        
+    - name: Restore dependencies
+      run: dotnet restore ./Algorithms      
+      
+    - name: Build
+      run: dotnet build --no-restore --configuration Release ./Algorithms  
+
+
+  Tests:
+    runs-on: ubuntu-latest
+    needs: Build
+    
+    steps:    
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+        
+    - name: Test
+      run: dotnet test --verbosity normal --logger "liquid.md" ./Algorithms.Tests    
+      
+    - name: Copy result files
+      run: |
+        [ ! -d "~/test-artifacts" ] && mkdir ~/test-artifacts
+        cp -f ./Algorithms.Tests/TestResults/*.md ~/test-artifacts
+
+    - name: Upload Results Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:       
+        name: Unit Tests
+        path: ~/test-artifacts/*.md
+
+  Benchmark:
+    runs-on: ubuntu-latest
+    needs: Build
+    steps:    
+    - uses: actions/checkout@v2
+    
+    - name: Setup .NET and Checkout
+      uses: actions/setup-dotnet@v1
+      with:
+        dotnet-version: 3.1.x
+        
+    - name: Run Benchmark
+      run: dotnet run --configuration Release --project ./Algorithms -- --artifacts ../BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
+
+    - name: Copy result files
+      run: |
+        mkdir ~/benchmark-artifacts
+        cp -f ./BenchmarkDotNet.Artifacts/results/*.md ~/benchmark-artifacts
+        
+    - name: Upload Results Artifact
+      uses: actions/upload-artifact@v2.2.2
+      with:       
+        name: Benchmarks
+        path: ~/benchmark-artifacts/*.md      
+      
+  Publish_Results:
+    runs-on: ubuntu-latest
+    needs: [Benchmark, Tests]
+    if: success()
+    steps:          
+    - uses: actions/download-artifact@v2    
+      name: Download benchmarks artifacts
+      with:
+        name: Benchmarks
+        path: ~/artifacts/benchmark
+    
+    - uses: actions/download-artifact@v2
+      name: Download unit tests artifacts
+      with:
+        name: Unit Tests
+        path: ~/artifacts/UnitTests
+
+    - uses: actions/checkout@v2
+    
+    - name: Copy raw files
+      run: |
+        ls -R ~/artifacts/benchmark
+        ls -R ~/artifacts/UnitTests
+        cp -f ~/artifacts/benchmark/* ./TestResults/Benchmark	        
+        cp -f ~/artifacts/UnitTests/* ./TestResults/UnitTests 
+        
+    - name: Merge benchmarks with READMEs
+      run: |
+        cd ./TestResults/Benchmark
+        ./merge.sh
+        
+    - name: Push results to repo
+      run: |
+        git config --global user.name "github-actions[bot]"
+        git config --global user.email "41898282+github-actions[bot]@users.noreply.github.com"
+
+        git add .
+        git add ./TestResults/ -f
+        git commit -m "Updating READMEs"
+        git push

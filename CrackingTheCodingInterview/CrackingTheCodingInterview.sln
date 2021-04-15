@@ -1,0 +1,31 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 12.00
+# Visual Studio Version 16
+VisualStudioVersion = 16.0.31129.286
+MinimumVisualStudioVersion = 10.0.40219.1
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackingTheCodingInterview", "CrackingTheCodingInterview\CrackingTheCodingInterview.csproj", "{947DAE96-3551-4740-A7CA-6524785F12DB}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CrackingTheCodingInterview.Tests", "CrackingTheCodingInterview.Tests\CrackingTheCodingInterview.Tests.csproj", "{59D8DC66-D792-45AC-8A61-8B0EF36BD77E}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{947DAE96-3551-4740-A7CA-6524785F12DB}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{947DAE96-3551-4740-A7CA-6524785F12DB}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{947DAE96-3551-4740-A7CA-6524785F12DB}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{947DAE96-3551-4740-A7CA-6524785F12DB}.Release|Any CPU.Build.0 = Release|Any CPU
+		{59D8DC66-D792-45AC-8A61-8B0EF36BD77E}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{59D8DC66-D792-45AC-8A61-8B0EF36BD77E}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{59D8DC66-D792-45AC-8A61-8B0EF36BD77E}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{59D8DC66-D792-45AC-8A61-8B0EF36BD77E}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		SolutionGuid = {C8C283D8-1345-40E5-BDC5-131B2B3BD35A}
+	EndGlobalSection
+EndGlobal
