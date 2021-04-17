@@ -53,10 +53,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.ArrayList
 
         public static IEnumerable<object[]> Data()
         {
-            yield return new object[] { Enumerable.Range(0, 10).ToArray(), 100 };
-            yield return new object[] { Enumerable.Range(0, 100).ToArray(), 100 };
-            yield return new object[] { Enumerable.Range(0, 1000).ToArray(), 100 };
-            yield return new object[] { Enumerable.Range(0, 10000).ToArray(), 1000 };
+            return CrackingTheCodingInterview.ArraysAndStrings.ArrayList.ArrayListBenchmark.Data();
         }
     }
 }
