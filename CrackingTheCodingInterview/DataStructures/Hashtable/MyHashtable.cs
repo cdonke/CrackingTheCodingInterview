@@ -17,7 +17,6 @@ namespace CrackingTheCodingInterview.DataStructures.Hashtable
         {
             public TInput value { get; set; }
             public string key { get; set; }
-            public bool collision { get; set; }
             public Node next { get; set; }
         }
 
@@ -64,7 +63,6 @@ namespace CrackingTheCodingInterview.DataStructures.Hashtable
             if (collection[hash] != null)
             {
                 var currentNode = collection[hash];
-                node.collision = true;
                 while (currentNode.next != null)
                 {
                     currentNode = currentNode.next;
@@ -98,11 +96,15 @@ namespace CrackingTheCodingInterview.DataStructures.Hashtable
         {
             var hash = HashKey(key, _length);
             var currentNode = _nodes[hash];
-            while (currentNode.next != null)
+            while (currentNode != null && !currentNode.key.Equals(key, StringComparison.OrdinalIgnoreCase))
             {
                 currentNode = currentNode.next;
             }
-            currentNode.value = value;
+
+            if (currentNode != null)
+            {
+                currentNode.value = value;
+            }
         }
         public bool Delete(string key)
         {

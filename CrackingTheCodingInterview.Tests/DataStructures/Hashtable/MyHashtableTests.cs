@@ -1,6 +1,7 @@
 ﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using System.Text;
 
 namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
@@ -9,25 +10,41 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
     public class MyHashtableTests
     {
         [TestMethod]
-        public void Add()
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Add_DefaultConstructor(int[] items, int capacity)
         {
-            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(5);
-            int n = 20;
-            for (int i = 0; i < n; i++)
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>();
+            for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {i}", i);
+                hashtable.Add($"item {items[i]}", i);
             }
 
-            Assert.AreEqual(n, hashtable.Count);
+            Assert.AreEqual(items.Length, hashtable.Count);
         }
 
+
         [TestMethod]
-        public void Get()
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Add(int[] items, int capacity)
         {
-            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(5);
-            for (int i = 0; i < 20; i++)
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {i}", i);
+                hashtable.Add($"item {items[i]}", i);
+            }
+
+            Assert.AreEqual(items.Length, hashtable.Count);
+        }
+
+
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Get(int[] items, int capacity)
+        {
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
+            {
+                hashtable.Add($"item {items[i]}", i);
             }
 
             int expected = hashtable.Get("item 10");
@@ -42,17 +59,41 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             expected = hashtable.Get("item 1000");
             Assert.AreEqual(0, 00);
         }
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Get_Indexer(int[] items, int capacity)
+        {
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
+            {
+                hashtable.Add($"item {items[i]}", i);
+            }
+
+            int expected = hashtable["item 10"];
+            Assert.AreEqual(10, 10);
+
+            expected = hashtable["item 7"];
+            Assert.AreEqual(7, 7);
+
+            expected = hashtable["item 2"];
+            Assert.AreEqual(2, 2);
+
+            expected = hashtable["item 1000"];
+            Assert.AreEqual(0, 00);
+        }
+
 
         [TestMethod]
-        public void Delete()
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Delete(int[] items, int capacity)
         {
             int item;
             bool success;
-            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(5);
-            int n = 100;
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            int n = items.Length;
             for (int i = 0; i < n; i++)
             {
-                hashtable.Add($"item {i}", i);
+                hashtable.Add($"item {items[i]}", items[i]);
             }
 
             item = hashtable.Get("item 10");
@@ -76,16 +117,42 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             Assert.AreEqual(0, hashtable.Get("item 0"));
             Assert.IsTrue(success);
         }
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Delete_Twice(int[] items, int capacity)
+        {
+            int item;
+            bool success;
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            int n = items.Length;
+            for (int i = 0; i < n; i++)
+            {
+                hashtable.Add($"item {items[i]}", items[i]);
+            }
+
+            item = hashtable.Get("item 10");
+            Assert.AreEqual(10, item);
+            success = hashtable.Delete("item 10");
+            Assert.AreEqual(--n, hashtable.Count);
+            Assert.AreEqual(0, hashtable.Get("item 10"));
+            Assert.IsTrue(success);
+
+            item = hashtable.Get("item 10");
+            Assert.AreEqual(0, item);
+            success = hashtable.Delete("item 10");
+            Assert.AreEqual(n, hashtable.Count);
+            Assert.AreEqual(0, hashtable.Get("item 10"));
+            Assert.IsFalse(success);
+        }
 
         [TestMethod]
-        public void Update()
+        [DynamicData(nameof(Data_Update), DynamicDataSourceType.Method)]
+        public void Update(int[] items, int capacity, string key, int expected)
         {
-            int expected = 20;
-            string key = "item 10";
-            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>();
-            for (int i = 0; i < 20; i++)
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {i}", i);
+                hashtable.Add($"item {items[i]}", items[i]);
             }
 
             hashtable.Update(key, expected);
@@ -94,19 +161,76 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
         }
 
         [TestMethod]
-        public void Update_WithIndexer()
+        [DynamicData(nameof(Data_Update), DynamicDataSourceType.Method)]
+        public void Update_WithIndexer(int[] items, int capacity, string key, int expected)
         {
-            int expected = 20;
-            string key = "item 10";
-            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>();
-            for (int i = 0; i < 20; i++)
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {i}", i);
+                hashtable.Add($"item {items[i]}", items[i]);
             }
 
             hashtable[key] = expected;
-            var actual = hashtable.Get(key);
+            var actual = hashtable[key];
             Assert.AreEqual(expected, actual);
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Update_NotFound(int[] items, int capacity)
+        {
+            int expected = 10;
+            string key = Guid.NewGuid().ToString();
+
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
+            {
+                hashtable.Add($"item {items[i]}", items[i]);
+            }
+
+            hashtable[key] = expected;
+            var actual = hashtable[key];
+            Assert.AreEqual(0, actual);
+        }
+
+        [TestMethod]
+        [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
+        public void Clear(int[] items, int capacity)
+        {
+            var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
+            for (int i = 0; i < items.Length; i++)
+            {
+                hashtable.Add($"item {items[i]}", items[i]);
+            }
+
+            Assert.AreEqual(items.Length, hashtable.Count);
+            hashtable.Clear();
+            Assert.AreEqual(0, hashtable.Count);
+        }
+
+        public static IEnumerable<object[]> Data()
+        {
+            Random r = new Random();
+
+            yield return new object[] { Enumerable.Range(0, 20).OrderBy(q => r.Next()).ToArray(), 5 };
+            yield return new object[] { Enumerable.Range(0, 100).OrderBy(q => r.Next()).ToArray(), 100 }; // Default Capacity
+            yield return new object[] { Enumerable.Range(0, 1000).OrderBy(q => r.Next()).ToArray(), 100 }; // Default capacity
+            yield return new object[] { Enumerable.Range(0, 1000).OrderBy(q => r.Next()).ToArray(), 1000 };
+        }
+        public static IEnumerable<object[]> Data_Update()
+        {
+            Random r = new Random();
+
+            foreach (var data in Data())
+            {
+                int[] numbers = data[0] as int[];
+                object capacity = data[1];
+                var max_data = numbers.Length;
+                int idx = r.Next(0, max_data);
+                int expected = idx * 2;
+
+                yield return new object[] { numbers, capacity, $"item {idx}", expected };
+            }
         }
     }
 }
