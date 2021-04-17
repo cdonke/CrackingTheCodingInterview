@@ -1,10 +1,12 @@
 ﻿using BenchmarkDotNet.Configs;
 using BenchmarkDotNet.Running;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CrackingTheCodingInterview
 {
     class Program
     {
+        [ExcludeFromCodeCoverage]
         static void Main(string[] args)
         {
             if (args.Length > 0)
