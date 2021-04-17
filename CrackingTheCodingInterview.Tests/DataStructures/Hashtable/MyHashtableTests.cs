@@ -44,20 +44,20 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
             for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {items[i]}", i);
+                hashtable.Add($"item {items[i]}", items[i]);
             }
 
-            int expected = hashtable.Get("item 10");
-            Assert.AreEqual(10, 10);
+            int actual = hashtable["item 10"];
+            Assert.AreEqual(10, actual);
 
-            expected = hashtable.Get("item 7");
-            Assert.AreEqual(7, 7);
+            actual = hashtable["item 7"];
+            Assert.AreEqual(7, actual);
 
-            expected = hashtable.Get("item 2");
-            Assert.AreEqual(2, 2);
+            actual = hashtable["item 2"];
+            Assert.AreEqual(2, actual);
 
-            expected = hashtable.Get("item 1000");
-            Assert.AreEqual(0, 00);
+            actual = hashtable["item 1000"];
+            Assert.AreEqual(0, actual);
         }
         [TestMethod]
         [DynamicData(nameof(Data), DynamicDataSourceType.Method)]
@@ -66,20 +66,20 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             var hashtable = new CrackingTheCodingInterview.DataStructures.Hashtable.MyHashtable<int>(capacity);
             for (int i = 0; i < items.Length; i++)
             {
-                hashtable.Add($"item {items[i]}", i);
+                hashtable.Add($"item {items[i]}", items[i]);
             }
 
-            int expected = hashtable["item 10"];
-            Assert.AreEqual(10, 10);
+            int actual = hashtable["item 10"];
+            Assert.AreEqual(10, actual);
 
-            expected = hashtable["item 7"];
-            Assert.AreEqual(7, 7);
+            actual = hashtable["item 7"];
+            Assert.AreEqual(7, actual);
 
-            expected = hashtable["item 2"];
-            Assert.AreEqual(2, 2);
+            actual = hashtable["item 2"]; 
+            Assert.AreEqual(2, actual);
 
-            expected = hashtable["item 1000"];
-            Assert.AreEqual(0, 00);
+            actual = hashtable["item 1000"];
+            Assert.AreEqual(0, actual);
         }
 
 
@@ -210,12 +210,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
 
         public static IEnumerable<object[]> Data()
         {
-            Random r = new Random();
-
-            yield return new object[] { Enumerable.Range(0, 20).OrderBy(q => r.Next()).ToArray(), 5 };
-            yield return new object[] { Enumerable.Range(0, 100).OrderBy(q => r.Next()).ToArray(), 100 }; // Default Capacity
-            yield return new object[] { Enumerable.Range(0, 1000).OrderBy(q => r.Next()).ToArray(), 100 }; // Default capacity
-            yield return new object[] { Enumerable.Range(0, 1000).OrderBy(q => r.Next()).ToArray(), 1000 };
+            return CrackingTheCodingInterview.ArraysAndStrings.Hashtable.HashtableBenchmark.Data();
         }
         public static IEnumerable<object[]> Data_Update()
         {
