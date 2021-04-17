@@ -43,7 +43,7 @@ Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec veh
         {
             var sb = new System.Text.StringBuilder(data);
         }
-        [Benchmark(Description = "MyStringBuilder", Baseline = true)]
+        [Benchmark(Description = "MyStringBuilder")]
         [BenchmarkCategory("Append_Constructor")]
         [ArgumentsSource(nameof(Data))]
         public void MyStringBuilder_Append_Constructor(string data)
@@ -60,7 +60,7 @@ Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec veh
             var sb = new System.Text.StringBuilder();
             sb.Append(data);
         }
-        [Benchmark(Description = "MyStringBuilder", Baseline = true)]
+        [Benchmark(Description = "MyStringBuilder")]
         [BenchmarkCategory("Append")]
         [ArgumentsSource(nameof(Data))]
         public void MyStringBuilder_Append(string data)
@@ -79,7 +79,7 @@ Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec veh
             var sb = new System.Text.StringBuilder();
             sb.AppendLine(data);
         }
-        [Benchmark(Description = "MyStringBuilder", Baseline = true)]
+        [Benchmark(Description = "MyStringBuilder")]
         [BenchmarkCategory("AppendLine")]
         [ArgumentsSource(nameof(Data))]
         public void MyStringBuilder_AppendLine(string data)
@@ -100,7 +100,7 @@ Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec veh
             sb.AppendLine(data);
             var result = sb.ToString();
         }
-        [Benchmark(Description = "MyStringBuilder", Baseline = true)]
+        [Benchmark(Description = "MyStringBuilder")]
         [BenchmarkCategory("ToString")]
         [ArgumentsSource(nameof(Data))]
         public void MyStringBuilder_ToString(string data)

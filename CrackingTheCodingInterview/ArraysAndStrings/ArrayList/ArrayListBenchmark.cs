@@ -18,7 +18,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
         }
 
         [Benchmark(Description = "System.Collections.ArrayList", Baseline = true)]
-        [Category("Add")]
+        [BenchmarkCategory("Add")]
         [ArgumentsSource(nameof(Data))]
         public void Default_Add(int[] items, int capacity)
         {
@@ -27,8 +27,8 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
                 arrayList.Add(item);
         }
 
-        [Benchmark(Description = "MyArrayList", Baseline = true)]
-        [Category("Add")]
+        [Benchmark(Description = "MyArrayList")]
+        [BenchmarkCategory("Add")]
         [ArgumentsSource(nameof(Data))]
         public void MyArrayList_Add(int[] items, int capacity)
         {
@@ -37,8 +37,10 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
                 arrayList.Add(item);
         }
 
+
+
         [Benchmark(Description = "System.Collections.ArrayList", Baseline = true)]
-        [Category("AddRange")]
+        [BenchmarkCategory("AddRange")]
         [ArgumentsSource(nameof(Data))]
         public void Default_AddRange(int[] items, int capacity)
         {
@@ -46,8 +48,8 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
             arrayList.AddRange(items);
         }
 
-        [Benchmark(Description = "MyArrayList", Baseline = true)]
-        [Category("AddRange")]
+        [Benchmark(Description = "MyArrayList")]
+        [BenchmarkCategory("AddRange")]
         [ArgumentsSource(nameof(Data))]
         public void MyArrayList_AddRange(int[] items, int capacity)
         {
@@ -55,8 +57,11 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
             arrayList.AddRange(items);
         }
 
+
+
+
         [Benchmark(Description = "System.Collections.ArrayList", Baseline = true)]
-        [Category("AddRange")]
+        [BenchmarkCategory("Clear")]
         [ArgumentsSource(nameof(Data))]
         public void Default_Clear(int[] items, int capacity)
         {
@@ -66,8 +71,8 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
             arrayList.Clear();
         }
 
-        [Benchmark(Description = "MyArrayList", Baseline = true)]
-        [Category("Clear")]
+        [Benchmark(Description = "MyArrayList")]
+        [BenchmarkCategory("Clear")]
         [ArgumentsSource(nameof(Data))]
         public void MyArrayList_Clear(int[] items, int capacity)
         {
