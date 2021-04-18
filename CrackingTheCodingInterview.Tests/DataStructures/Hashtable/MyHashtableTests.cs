@@ -56,7 +56,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             actual = hashtable["item 2"];
             Assert.AreEqual(2, actual);
 
-            actual = hashtable["item 1000"];
+            actual = hashtable["item not found"];
             Assert.AreEqual(0, actual);
         }
         [TestMethod]
@@ -78,7 +78,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.Hashtable
             actual = hashtable["item 2"]; 
             Assert.AreEqual(2, actual);
 
-            actual = hashtable["item 1000"];
+            actual = hashtable["item not found"];
             Assert.AreEqual(0, actual);
         }
 
