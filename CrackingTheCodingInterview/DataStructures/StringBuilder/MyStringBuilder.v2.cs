@@ -4,14 +4,15 @@ using System.Collections.Generic;
 using System.Security.Cryptography;
 using System.Text;
 
-namespace CrackingTheCodingInterview.DataStructures.StringBuilder
+namespace CrackingTheCodingInterview.DataStructures.StringBuilder.v2
 {
     public class MyStringBuilder
     {
-        private readonly int _capacity;
-        //private MyArrayList<char> _collection;
+        private readonly int _factor = 2;
+        private int _capacity;
         private char[] _collection;
         private int _position;
+
 
         public MyStringBuilder() : this(1000, string.Empty) { }
         public MyStringBuilder(string data) : this(1000, data) { }
@@ -25,6 +26,10 @@ namespace CrackingTheCodingInterview.DataStructures.StringBuilder
 
         public void Append(string data)
         {
+            if (_position+data.Length > _capacity)
+            {
+                Resize(_position + data.Length);
+            }
             copyArray(data, _collection, _position, data.Length);
 
             _position += data.Length;
@@ -40,9 +45,9 @@ namespace CrackingTheCodingInterview.DataStructures.StringBuilder
         }
         public void Clear()
         {
-            for (int i = 0; i < _collection.Length; i++)
+            for (; _position > 0; _position--)
             {
-                _collection[i] = default(char);
+                _collection[_position] = default(char);
             }
         }
 
@@ -51,10 +56,30 @@ namespace CrackingTheCodingInterview.DataStructures.StringBuilder
 
         public override string ToString()
         {
+            if (_position == 0)
+            {
+                return string.Empty;
+            }
+
             var array = new char[_position];
             copyArray(_collection, array, 0, _position);
 
             return new string(array);
+        }
+
+        private void Resize(int min_size)
+        {
+            int capacity = _capacity;
+            while (capacity < min_size)
+            {
+                capacity += capacity;
+            }
+
+            char[] collection = new char[capacity];
+            copyArray(_collection, collection, 0, _position);
+
+            _capacity = capacity;
+            _collection = collection;
         }
 
         private void copyArray(string src, char[] dest, int start, int length)
