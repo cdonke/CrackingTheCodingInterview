@@ -36,7 +36,7 @@ Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus consequa
 Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec vehicula suscipit imperdiet. Vivamus ullamcorper, orci sed vehicula dignissim, nisl ipsum vehicula purus, eget cursus nisi ipsum quis nibh. Ut iaculis, ligula ut." };
         }
 
-        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        //[Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
         [BenchmarkCategory("Append_Constructor")]
         [ArgumentsSource(nameof(Data))]
         public void Default_Append_Constructor(string data)
