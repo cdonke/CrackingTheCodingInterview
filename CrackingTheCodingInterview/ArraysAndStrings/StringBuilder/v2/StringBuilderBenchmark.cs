@@ -1,12 +1,12 @@
 ﻿using BenchmarkDotNet.Attributes;
-using CrackingTheCodingInterview.DataStructures.StringBuilder;
+using CrackingTheCodingInterview.DataStructures.StringBuilder.v2;
 using System;
 using System.Collections.Generic;
 using System.Text;
 
 namespace CrackingTheCodingInterview.ArraysAndStrings.StringBuilder
 {
-    public class StringBuilderBenchmark_V1 : BenchmarkBase
+    public class StringBuilderBenchmark_V2 : BenchmarkBase
     {
         public static IEnumerable<object[]> Data()
         {
