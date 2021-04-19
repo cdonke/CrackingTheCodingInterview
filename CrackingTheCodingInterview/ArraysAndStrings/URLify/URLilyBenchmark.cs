@@ -1,12 +1,14 @@
 ﻿using BenchmarkDotNet.Attributes;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace CrackingTheCodingInterview.ArraysAndStrings.URLify
 {
     public class URLilyBenchmark : BenchmarkBase
     {
+        [ExcludeFromCodeCoverage]
         public static IEnumerable<object[]> Data()
         {
             yield return new object[] { "Mr John Smith    ", 13, "Mr%20John%20Smith" };
