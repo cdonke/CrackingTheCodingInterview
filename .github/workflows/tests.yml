@@ -2,12 +2,13 @@ name: Unit Tests and Benchmark
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, skipcommit ]
   workflow_dispatch:
 
 jobs:
   Build:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '#notests') && !contains(github.event.head_commit.message, '#notests')"
 
     steps:
     - uses: actions/checkout@v2
