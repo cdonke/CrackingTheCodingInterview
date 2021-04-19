@@ -1,0 +1,875 @@
+﻿
+# Test Run
+### Run Summary
+
+<p>
+<strong>Overall Result:</strong> ✔️ Pass <br />
+<strong>Pass Rate:</strong> 100% <br />
+<strong>Run Duration:</strong> 2s 20ms <br />
+<strong>Date:</strong> 2021-04-19 12:15:01 - 2021-04-19 12:15:03 <br />
+<strong>Framework:</strong> .NETCoreApp,Version=v3.1 <br />
+<strong>Total Tests:</strong> 160 <br />
+</p>
+
+<table>
+<thead>
+<tr>
+<th>✔️ Passed</th>
+<th>❌ Failed</th>
+<th>⚠️ Skipped</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>160</td>
+<td>0</td>
+<td>0</td>
+</tr>
+<tr>
+<td>100%</td>
+<td>0%</td>
+<td>0%</td>
+</tr>
+</tbody>
+</table>
+
+### Result Sets
+#### CrackingTheCodingInterview.Tests.dll - 100%
+<details>
+<summary>Full Results</summary>
+<table>
+<thead>
+<tr>
+<th>Result</th>
+<th>Test</th>
+<th>Duration</th>
+</tr>
+</thead>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>12ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>5ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append_Constructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Append</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_Empty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AppendLine_NonEmpty</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>41ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add_DefaultConstructor</td>
+<td>26ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>43ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>31ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>42ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get</td>
+<td>31ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>30ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Get_Indexer</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>30ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete</td>
+<td>24ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>34ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Delete_Twice</td>
+<td>27ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>30ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update</td>
+<td>23ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>38ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_WithIndexer</td>
+<td>33ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>42ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Update_NotFound</td>
+<td>34ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>28ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>23ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Add</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_Array</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_Array</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_Array</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_Array</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_Array</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_List</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_List</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_List</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_List</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>AddRange_List</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>Clear</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>FirstTry</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>FirstTry</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>FirstTry</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>FirstTry</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>SecondTry</td>
+<td>2ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>SecondTry</td>
+<td>1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>SecondTry</td>
+<td>< 1ms</td>
+</tr>
+<tr>
+<td> ✔️ Passed </td>
+<td>SecondTry</td>
+<td>< 1ms</td>
+</tr>
+</tbody>
+</table>
+</details>
+
+### Run Messages
+<details>
+<summary>Informational</summary>
+<pre><code>
+</code></pre>
+</details>
+
+<details>
+<summary>Warning</summary>
+<pre><code>
+</code></pre>
+</details>
+
+<details>
+<summary>Error</summary>
+<pre><code>
+</code></pre>
+</details>
+
+
+
+----
+
+[Created using Liquid Test Reports](https://github.com/kurtmkurtm/LiquidTestReports)
