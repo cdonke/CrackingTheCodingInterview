@@ -8,6 +8,7 @@ on:
 jobs:
   Build:
     runs-on: ubuntu-latest
+    if: "!contains(github.event.head_commit.message, '#notests') && !contains(github.event.head_commit.message, '#notests')"
 
     steps:
     - uses: actions/checkout@v2
@@ -62,7 +63,7 @@ jobs:
         dotnet-version: 3.1.x
         
     - name: Run Benchmark
-      run: dotnet run --configuration Release --project ./CrackingTheCodingInterview -- --artifacts ../BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
+      run: sudo dotnet run --configuration Release --project ./CrackingTheCodingInterview -- --artifacts ../BenchmarkDotNet.Artifacts/ --info --stopOnFirstError
 
     - name: Copy result files
       run: |
