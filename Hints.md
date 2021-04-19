@@ -8,12 +8,21 @@ Can you check the strings against that definition?
 ### 44 <a name="44"></a>
 Try a hash table. 
 
+
+### 53 <a name="53"></a>
+It's often easiest to modify strings by going from the end of the string to the beginning. 
+
+
 ### 84 <a name="84"></a>
 There is one solution that is 0( N log N) time.  
 Another solution uses some space, but is O(N) time. 
 
 ### 117 <a name="117"></a>
 Could a bit vector be useful? 
+
+
+### 118 <a name="118"></a>
+You might find you need to know the number of spaces. Can you just count them? 
 
 ### 122 <a name="122"></a>
 Could a hash table be useful? 
