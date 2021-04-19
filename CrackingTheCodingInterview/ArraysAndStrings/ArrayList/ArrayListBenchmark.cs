@@ -2,11 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Text;
 
 namespace CrackingTheCodingInterview.ArraysAndStrings.ArrayList
 {
+    [ExcludeFromCodeCoverage]
     public class ArrayListBenchmark : BenchmarkBase
     {
         public static IEnumerable<object[]> Data()

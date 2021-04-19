@@ -8,9 +8,9 @@ using System.Linq;
 namespace CrackingTheCodingInterview.ArraysAndStrings.Hashtable
 {
 
+    [ExcludeFromCodeCoverage]
     public class HashtableBenchmark : BenchmarkBase
     {
-        [ExcludeFromCodeCoverage]
         public static IEnumerable<object[]> Data()
         {
             Random random = new Random();
