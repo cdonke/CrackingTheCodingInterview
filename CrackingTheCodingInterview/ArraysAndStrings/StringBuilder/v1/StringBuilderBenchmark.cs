@@ -2,10 +2,12 @@
 using CrackingTheCodingInterview.DataStructures.StringBuilder;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Text;
 
 namespace CrackingTheCodingInterview.ArraysAndStrings.StringBuilder
 {
+    [ExcludeFromCodeCoverage]
     public class StringBuilderBenchmark_V1 : BenchmarkBase
     {
         public static IEnumerable<object[]> Data()
