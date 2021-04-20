@@ -5,6 +5,11 @@ Describe what it means for two strings to be permutations of each other.
 Now, look at that definition you provided.  
 Can you check the strings against that definition? 
 
+### 17 <a name="17"></a>
+If you just cleared the rows and columns as you found Os, you'd likely wind up clearing 
+the whole matrix. Try finding the cells with zeros first before making any changes to the 
+matrix. 
+
 ### 23 <a name="23"></a>
 Start with the easy thing. Can you check each of the conditions separately?
 
@@ -12,10 +17,13 @@ Start with the easy thing. Can you check each of the conditions separately?
 ### 44 <a name="44"></a>
 Try a hash table. 
 
-
-
 ### 53 <a name="53"></a>
 It's often easiest to modify strings by going from the end of the string to the beginning. 
+
+
+### 74 <a name="74"></a>
+Can you use O(N) additional space instead of O(N2)? What information do you really 
+need from the list of cells that are zero?
 
 
 ### 84 <a name="84"></a>
@@ -27,6 +35,12 @@ Do the easy thing first. Compress the string, then compare the lengths.
 
 ### 97 <a name="97"></a>
 What is the relationship between the "insert character" option and the "remove character" option? Do these need to be two separate checks?
+
+### 102 <a name="102"></a>
+You probably need some data storage to maintain a list of the rows and columns that 
+need to be zeroed. Can you reduce the additional space usage to 0(1) by using the 
+matrix itself for data storage?
+
 
 ### 110 <a name="110"></a>
 Be careful that you aren't repeatedly concatenating strings together. This can be very inefficient. 
