@@ -8,11 +8,9 @@ namespace CrackingTheCodingInterview.DataStructures.StringBuilder.v2
 {
     public class MyStringBuilder
     {
-        private readonly int _factor = 2;
         private int _capacity;
         private char[] _collection;
         private int _position;
-
 
         public MyStringBuilder() : this(1000, string.Empty) { }
         public MyStringBuilder(string data) : this(1000, data) { }

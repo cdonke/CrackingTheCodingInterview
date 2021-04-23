@@ -88,7 +88,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StringBuilder
 
         public static IEnumerable<object[]> Data()
         {
-            return CrackingTheCodingInterview.ArraysAndStrings.StringBuilder.Common.Data();
+            return CrackingTheCodingInterview.ArraysAndStrings.StringBuilder.StringBuilderBenchmark.Data();
         }
     }
 }

@@ -1,9 +1,14 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using CrackingTheCodingInterview.DataStructures.StringBuilder;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
+using System.Text;
 
 namespace CrackingTheCodingInterview.ArraysAndStrings.StringBuilder
 {
-    public static class Common
+    [ExcludeFromCodeCoverage]
+    public class StringBuilderBenchmark : BenchmarkBase
     {
         public static IEnumerable<object[]> Data()
         {
@@ -33,5 +38,157 @@ Interdum et malesuada fames ac ante ipsum primis in faucibus. Phasellus consequa
 
 Vivamus eget finibus metus. Nulla placerat lacus eu sem tempor varius. Donec vehicula suscipit imperdiet. Vivamus ullamcorper, orci sed vehicula dignissim, nisl ipsum vehicula purus, eget cursus nisi ipsum quis nibh. Ut iaculis, ligula ut." };
         }
+
+        #region V1
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V1 - Append_Constructor")]
+        [ArgumentsSource(nameof(Data))]
+        public void Default_Append_Constructor(string data)
+        {
+            var sb = new System.Text.StringBuilder(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V1 - Append_Constructor")]
+        [ArgumentsSource(nameof(Data))]
+        public void MyStringBuilder_Append_Constructor(string data)
+        {
+            var sb = new MyStringBuilder(data);
+        }
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V1 - Append")]
+        [ArgumentsSource(nameof(Data))]
+        public void Default_Append(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.Append(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V1 - Append")]
+        [ArgumentsSource(nameof(Data))]
+        public void MyStringBuilder_Append(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.Append(data);
+        }
+
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V1 - AppendLine")]
+        [ArgumentsSource(nameof(Data))]
+        public void Default_AppendLine(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V1 - AppendLine")]
+        [ArgumentsSource(nameof(Data))]
+        public void MyStringBuilder_AppendLine(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.AppendLine(data);
+        }
+
+
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V1 - ToString")]
+        [ArgumentsSource(nameof(Data))]
+        public void Default_ToString(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(data);
+            var result = sb.ToString();
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V1 - ToString")]
+        [ArgumentsSource(nameof(Data))]
+        public void MyStringBuilder_ToString(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.AppendLine(data);
+            var result = sb.ToString();
+        }
+        #endregion
+
+        #region V2
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V2 - Append_Constructor")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_Default_Append_Constructor(string data)
+        {
+            var sb = new System.Text.StringBuilder(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V2 - Append_Constructor")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_MyStringBuilder_Append_Constructor(string data)
+        {
+            var sb = new MyStringBuilder(data);
+        }
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V2 - Append")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_Default_Append(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.Append(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V2 - Append")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_MyStringBuilder_Append(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.Append(data);
+        }
+
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V2 - AppendLine")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_Default_AppendLine(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(data);
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V2 - AppendLine")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_MyStringBuilder_AppendLine(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.AppendLine(data);
+        }
+
+
+
+
+        [Benchmark(Description = "System.Text.StringBuilder", Baseline = true)]
+        [BenchmarkCategory("V2 - ToString")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_Default_ToString(string data)
+        {
+            var sb = new System.Text.StringBuilder();
+            sb.AppendLine(data);
+            var result = sb.ToString();
+        }
+        [Benchmark(Description = "MyStringBuilder")]
+        [BenchmarkCategory("V2 - ToString")]
+        [ArgumentsSource(nameof(Data))]
+        public void V2_MyStringBuilder_ToString(string data)
+        {
+            var sb = new MyStringBuilder();
+            sb.AppendLine(data);
+            var result = sb.ToString();
+        }
+        #endregion
     }
 }
