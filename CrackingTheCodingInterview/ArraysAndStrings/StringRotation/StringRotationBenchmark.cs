@@ -20,6 +20,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.StringRotation
             yield return new object[] { "hotdog", "doghot", true};
             yield return new object[] { "gooddog", "doggood", true };
             yield return new object[] { "gooddog", "oggoodd", true };
+            yield return new object[] { "a", "aa", false};
         }
 
         /// <summary>

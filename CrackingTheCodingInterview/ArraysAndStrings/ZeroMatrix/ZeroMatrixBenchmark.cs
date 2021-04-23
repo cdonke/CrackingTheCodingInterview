@@ -2,6 +2,7 @@
 using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 using System.Linq;
 using System.Security.Principal;
 using System.Text;
@@ -11,6 +12,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ZeroMatrix
 {
     public class ZeroMatrixBenchmark : BenchmarkBase
     {
+        [ExcludeFromCodeCoverage]
         public static IEnumerable<object[]> Data()
         {
             yield return new object[]
@@ -79,6 +81,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ZeroMatrix
         #region Resources for Benchmark
         private int[][] _a, _originalA;
 
+        [ExcludeFromCodeCoverage]
         public IEnumerable<int[][]> Data2()
         {
             foreach (object[] item in Data())
@@ -91,7 +94,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ZeroMatrix
             var json = JsonConvert.SerializeObject(src);
             dst = JsonConvert.DeserializeObject<int[][]>(json);
         }
-        
+
         [ParamsSource(nameof(Data2))]
         public int[][] A
         {
@@ -106,6 +109,7 @@ namespace CrackingTheCodingInterview.ArraysAndStrings.ZeroMatrix
             }
         }
 
+        [ExcludeFromCodeCoverage]
         [IterationCleanup]
         public void IterationCleanup()
         {
