@@ -27,4 +27,9 @@
     </PackageReference>
     <PackageReference Include="Newtonsoft.Json" Version="13.0.1" />
   </ItemGroup>
+  <ItemGroup>
+    <Folder Include="LinkedLists\" />
+    <Folder Include="LinkedLists\KthLast\" />
+    <Folder Include="LinkedLists\Partition\" />
+  </ItemGroup>
 </Project>
