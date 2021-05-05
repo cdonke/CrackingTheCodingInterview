@@ -21,4 +21,7 @@
     <ProjectReference Include="..\CrackingTheCodingInterview\CrackingTheCodingInterview.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="LinkedLists\" />
+  </ItemGroup>
 </Project>
