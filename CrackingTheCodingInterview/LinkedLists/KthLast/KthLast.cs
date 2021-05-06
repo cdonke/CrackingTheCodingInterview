@@ -1,10 +1,13 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CrackingTheCodingInterview.LinkedLists.KthLast
 {
     public class KthLast : BenchmarkBase
     {
+        [ExcludeFromCodeCoverage]
         public static IEnumerable<object[]> Data()
         {
             yield return new object[] { new LinkedList<int>(new[] { 0, 9, 8, 7, 6, 5, 4, 3, 2, 1 }), 1, 1 };
@@ -12,6 +15,8 @@ namespace CrackingTheCodingInterview.LinkedLists.KthLast
             yield return new object[] { new LinkedList<int>(new[] { 0, 9, 8, 7, 6, 5, 4, 3, 2, 1 }), 2, 2 };
         }
 
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
         public int FirstTry(LinkedList<int> list, int kth, int expected)
         {
             var node = list.First;
@@ -25,6 +30,8 @@ namespace CrackingTheCodingInterview.LinkedLists.KthLast
         }
 
         // Thinking if a scenario where I don't have the LinkedList Count
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
         public int SecondTry(LinkedList<int> list, int kth, int expected)
         {
             var node = list.First;
