@@ -1,29 +1,24 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.Text;
 
 namespace CrackingTheCodingInterview.DataStructures.LinkedLists
 {
-    public class LinkedList<T>
+    public class LinkedList<T> 
     {
-        [DebuggerStepThrough]
-        [DebuggerDisplay("{value}")]
-        private class Node
-        {
-            public Node(T value)
-            {
-                this.value = value;
-            }
 
-            public T value { get; set; }
-            public Node next { get; set; }
-        }
-
-        private Node _head;
+        private LinkedListNode<T> _head;
 
         public LinkedList()
         { }
+
+        public LinkedList(T[] data)
+        {
+            for (int i = 0; i < data.Length; i++)
+            {
+                this.Add(data[i]);
+            }
+        }
 
         public T this[int element]
         {
@@ -34,7 +29,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
                     throw new IndexOutOfRangeException();
                 }
 
-                Node current = _head;
+                LinkedListNode<T> current = _head;
                 if (element == 0)
                 {
                     return current.value;
@@ -55,7 +50,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
 
         public void Add(T value)
         {
-            var node = new Node(value);
+            var node = new LinkedListNode<T>(value);
             if (_head == null)
             {
                 _head = node;
@@ -80,7 +75,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
                 throw new IndexOutOfRangeException();
             }
 
-            var newNode = new Node(value);
+            var newNode = new LinkedListNode<T>(value);
 
             if (position == 0)
             {
@@ -89,7 +84,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
             }
             else
             {
-                Node previous = _head,
+                LinkedListNode<T> previous = _head,
                     current = _head.next;
 
                 for (int i = 1; i < position; i++)
@@ -112,7 +107,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
             }
 
 
-            Node node = _head;
+            LinkedListNode<T> node = _head;
             int i;
             for (i = 0; i < Count; i++)
             {
@@ -148,7 +143,7 @@ namespace CrackingTheCodingInterview.DataStructures.LinkedLists
             }
             else
             {
-                Node previous = _head,
+                LinkedListNode<T> previous = _head,
                     current = _head.next;
 
                 for (int i = 1; i < element; i++)

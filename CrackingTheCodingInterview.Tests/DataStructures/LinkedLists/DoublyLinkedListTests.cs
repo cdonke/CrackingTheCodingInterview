@@ -8,18 +8,18 @@ using System.Text;
 namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
 {
     [TestClass]
-    public class LinkedListTests
+    public class DoublyLinkedListTests
     {
         [TestMethod]
         [DataRow(new int[] { 1, 2, 3, 4, 5 })]
         public void Constructor(int[] data)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>(data);
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>(data);
 
             Assert.AreEqual(data.Length, ll.Count);
             for (int i = 0; i < data.Length; i++)
             {
-                Assert.AreEqual(data[i], ll[i]);
+                Assert.AreEqual(data[i], ll[i].value);
             }
         }
 
@@ -27,7 +27,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 3, 4, 5 })]
         public void Add(int[] data)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -36,7 +36,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
             Assert.AreEqual(data.Length, ll.Count);
             for (int i = 0; i < data.Length; i++)
             {
-                Assert.AreEqual(data[i], ll[i]);
+                Assert.AreEqual(data[i], ll[i].value);
             }
         }
 
@@ -45,7 +45,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 4, 5 }, 3, 0, new int[] { 3, 1, 2, 4, 5 })]
         public void InsertAt(int[] data, int number, int position, int[] expected)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -56,7 +56,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
             Assert.AreEqual(expected.Length, ll.Count);
             for (int i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(expected[i], ll[i]);
+                Assert.AreEqual(expected[i], ll[i].value);
             }
         }
 
@@ -69,7 +69,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 4, 5 }, 3, -1)]
         public void InsertAt_Exception(int[] data, int number, int position)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -86,7 +86,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 3, 4, 5, 6, 7, 8, 3 }, 3, 0, 2)]
         public void IndexOf(int[] data, int number, int start, int expected)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -107,7 +107,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 4, 5 }, 3, 16)]
         public void IndexOf_Exception(int[] data, int number, int start)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -121,7 +121,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 3, 4, 5 }, 0, new int[] { 2, 3, 4, 5 })]
         public void Delete(int[] data, int toDelete, int[] expected)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -132,7 +132,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
             Assert.AreEqual(expected.Length, ll.Count);
             for (int i = 0; i < expected.Length; i++)
             {
-                Assert.AreEqual(expected[i], ll[i]);
+                Assert.AreEqual(expected[i], ll[i].value);
             }
         }
 
@@ -144,7 +144,7 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
         [DataRow(new int[] { 1, 2, 3, 4, 5 }, -1)]
         public void Delete_Exception(int[] data, int toDelete)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -155,11 +155,12 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
 
 
         [TestMethod]
-        [DataRow(new int[] { 1, 2, 4, 5 }, 3)]
-        [DataRow(new int[] { 1, 2, 4, 5 }, 0)]
-        public void Indexer(int[] data, int idx)
+        [DataRow(new int[] { 1, 2, 4, 5 }, 3, 5)]
+        [DataRow(new int[] { 1, 2, 4, 5 }, 0, 1)]
+        [DataRow(new int[] { 1, 2, 4, 5 }, 10, null)]
+        public void Indexer(int[] data, int idx, object expected)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
@@ -167,17 +168,25 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.LinkedLists
 
             var actual = ll[idx];
 
-            Assert.AreEqual(data[idx], actual);
+            Assert.AreEqual(expected, actual?.value);
+        }
+
+        [TestMethod]
+        public void Indexer_Null()
+        {
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
+           var actual = ll[0];
+
+            Assert.IsNull(actual);
         }
 
         [TestMethod]
         [ExcludeFromCodeCoverage]
         [ExpectedException(typeof(IndexOutOfRangeException))]
         [DataRow(new int[] { 1, 2, 4, 5 }, -1)]
-        [DataRow(new int[] { 1, 2, 4, 5 }, 10)]
         public void Indexer_Exception(int[] data, int idx)
         {
-            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.LinkedList<int>();
+            var ll = new CrackingTheCodingInterview.DataStructures.LinkedLists.DoublyLinkedList<int>();
             foreach (var item in data)
             {
                 ll.Add(item);
