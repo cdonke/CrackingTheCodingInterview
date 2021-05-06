@@ -1,10 +1,13 @@
-﻿using System;
+﻿using BenchmarkDotNet.Attributes;
+using System;
 using System.Collections.Generic;
+using System.Diagnostics.CodeAnalysis;
 
 namespace CrackingTheCodingInterview.LinkedLists.Partition
 {
-    public class Partition:BenchmarkBase
+    public class Partition : BenchmarkBase
     {
+        [ExcludeFromCodeCoverage]
         public static IEnumerable<object[]> Data()
         {
             yield return new object[] {
@@ -12,10 +15,23 @@ namespace CrackingTheCodingInterview.LinkedLists.Partition
                 5,
                 new LinkedList<int>(new[] { 3, 2, 1, 5, 8, 5, 10 })
             };
-            
+
+        }
+
+        [ExcludeFromCodeCoverage]
+        public static IEnumerable<object[]> Data_CustomLinkedList()
+        {
+            yield return new object[] {
+                new DataStructures.LinkedLists.LinkedList<int>(new[] { 3, 5, 8, 5, 10, 2, 1 }),
+                5,
+                new DataStructures.LinkedLists.LinkedList<int>(new[] { 3, 2, 1, 5, 8, 5, 10 })
+            };
+
         }
 
         // On default .NET LinkedList implementation, the Node is read-only
+        [Benchmark]
+        [ArgumentsSource(nameof(Data))]
         public LinkedList<int> FirstTry(LinkedList<int> list, int partition, LinkedList<int> result)
         {
             LinkedList<int> left = new LinkedList<int>();
@@ -38,7 +54,7 @@ namespace CrackingTheCodingInterview.LinkedLists.Partition
             while (currentNode != null);
 
             currentNode = right.First;
-            while(currentNode != null)
+            while (currentNode != null)
             {
                 left.AddLast(currentNode.Value);
                 currentNode = currentNode.Next;
@@ -46,11 +62,6 @@ namespace CrackingTheCodingInterview.LinkedLists.Partition
 
             return left;
         }
-
-        //public LinkedList<int> SecondTry(LinkedList<int> list, int partition, LinkedList<int> result)
-        //{
-           
-        //}
 
     }
 }
