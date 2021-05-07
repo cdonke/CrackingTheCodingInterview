@@ -7,7 +7,7 @@ namespace CrackingTheCodingInterview.DataStructures.StacksAndQueues
     public class StackEmptyException : Exception { }
     public class MyStack<T>
     {
-        private class StackNode
+        protected class StackNode
         {
             public StackNode(T value)
             {
@@ -18,19 +18,23 @@ namespace CrackingTheCodingInterview.DataStructures.StacksAndQueues
             public StackNode next { get; set; }
         }
         
-        private StackNode _top;
+        protected StackNode _top;
 
         public int Count { get; private set; }
 
-        public void Push(T value)
+        protected void Push(StackNode node)
         {
-            var node = new StackNode(value);
             node.next = _top;
             _top = node;
             Count++;
         }
+        public virtual void Push(T value)
+        {
+            var node = new StackNode(value);
+            Push(node);
+        }
 
-        public T Pop()
+        public virtual T Pop()
         {
             if (IsEmpty)
             {
@@ -44,7 +48,7 @@ namespace CrackingTheCodingInterview.DataStructures.StacksAndQueues
             return value;
         }
 
-        public T Peek()
+        public virtual T Peek()
         {
             if (IsEmpty)
             {

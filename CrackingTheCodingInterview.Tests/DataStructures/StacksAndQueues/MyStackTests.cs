@@ -1,4 +1,5 @@
-﻿using Microsoft.VisualStudio.TestTools.UnitTesting;
+﻿using CrackingTheCodingInterview.DataStructures.StacksAndQueues;
+using Microsoft.VisualStudio.TestTools.UnitTesting;
 using System;
 using System.Collections.Generic;
 using System.Diagnostics.CodeAnalysis;
@@ -7,13 +8,21 @@ using System.Text;
 namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
 {
     [TestClass]
-    public class MyStackTests
+    public class MyStackTests<T>
+        where T : MyStack<int>, new()
     {
+        [TestInitialize]
+        public virtual void TestSetup()
+        {
+            stack = new T();
+        }
+
+        protected T stack;
+
         [TestMethod]
         [DataRow(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 10)]
         public void Add(int[] data, int expectedCount)
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             foreach (var item in data)
             {
                 stack.Push(item);
@@ -30,7 +39,6 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
         [DataRow(new[] { 1, 2, 3, 4, 5, 6, 7, 8, 9, 0 }, 10)]
         public void Pop(int[] data, int expectedCount)
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             foreach (var item in data)
             {
                 stack.Push(item);
@@ -49,7 +57,6 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
         [DataRow(new[] { 1, 2, 3, 4, 5, 6, 7 }, 7)]
         public void Peek(int[] data, int expected)
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             foreach (var item in data)
             {
                 stack.Push(item);
@@ -65,7 +72,6 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
         [DataRow(new int[0], true)]
         public void IsEmpty(int[] data, bool expected)
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             foreach (var item in data)
             {
                 stack.Push(item);
@@ -79,7 +85,6 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
         [ExpectedException(typeof(CrackingTheCodingInterview.DataStructures.StacksAndQueues.StackEmptyException))]
         public void Peek_Exception()
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             stack.Peek();
         }
 
@@ -89,7 +94,6 @@ namespace CrackingTheCodingInterview.Tests.DataStructures.StacksAndQueues
         [ExpectedException(typeof(CrackingTheCodingInterview.DataStructures.StacksAndQueues.StackEmptyException))]
         public void Pop_Exception()
         {
-            var stack = new CrackingTheCodingInterview.DataStructures.StacksAndQueues.MyStack<int>();
             stack.Pop();
         }
     }
