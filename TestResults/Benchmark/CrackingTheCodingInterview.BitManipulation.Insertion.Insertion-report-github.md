@@ -1,9 +1,3 @@
-﻿# Exercise
-
-# Benchmark
-
-**Last update:** Wed May 26 14:53:31 UTC 2021
-
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04

@@ -1,7 +1,7 @@
 ``` ini
 
 BenchmarkDotNet=v0.12.1, OS=ubuntu 20.04
-Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
+Intel Xeon Platinum 8171M CPU 2.60GHz, 1 CPU, 2 logical and 2 physical cores
 .NET Core SDK=5.0.203
   [Host]     : .NET Core 3.1.15 (CoreCLR 4.700.21.21202, CoreFX 4.700.21.21402), X64 RyuJIT
   DefaultJob : .NET Core 3.1.15 (CoreCLR 4.700.21.21202, CoreFX 4.700.21.21402), X64 RyuJIT
@@ -10,13 +10,13 @@ Intel Xeon CPU E5-2673 v4 2.30GHz, 1 CPU, 2 logical and 2 physical cores
 ```
 |          Method |                A |  expected |        Mean |     Error |    StdDev |  Gen 0 | Gen 1 | Gen 2 | Allocated |
 |---------------- |----------------- |---------- |------------:|----------:|----------:|-------:|------:|------:|----------:|
-|   **StringBuilder** |                **a** |         **a** |   **0.2804 ns** | **0.0652 ns** | **0.0610 ns** |      **-** |     **-** |     **-** |         **-** |
-| &#39;SB Refactored&#39; |                a |         a |   0.3480 ns | 0.0432 ns | 0.0404 ns |      - |     - |     - |         - |
-|   **StringBuilder** |      **aabcccccaaa** |  **a2b1c5a3** | **249.3399 ns** | **2.4381 ns** | **2.2806 ns** | **0.0052** |     **-** |     **-** |     **144 B** |
-| &#39;SB Refactored&#39; |      aabcccccaaa |  a2b1c5a3 | 257.2607 ns | 2.5119 ns | 2.2267 ns | 0.0052 |     - |     - |     144 B |
-|   **StringBuilder** | **aabccccccccccaaa** | **a2b1c10a3** | **261.5078 ns** | **4.1708 ns** | **3.9014 ns** | **0.0057** |     **-** |     **-** |     **152 B** |
-| &#39;SB Refactored&#39; | aabccccccccccaaa | a2b1c10a3 | 272.7786 ns | 4.2466 ns | 3.9723 ns | 0.0057 |     - |     - |     152 B |
-|   **StringBuilder** |               **ab** |        **ab** | **125.2313 ns** | **2.6085 ns** | **3.2989 ns** | **0.0029** |     **-** |     **-** |      **80 B** |
-| &#39;SB Refactored&#39; |               ab |        ab |  79.1037 ns | 0.8890 ns | 0.7881 ns | 0.0030 |     - |     - |      80 B |
-|   **StringBuilder** |              **abc** |       **abc** | **255.2310 ns** | **2.7486 ns** | **2.2952 ns** | **0.0067** |     **-** |     **-** |     **176 B** |
-| &#39;SB Refactored&#39; |              abc |       abc | 130.8327 ns | 2.0285 ns | 1.7982 ns | 0.0033 |     - |     - |      88 B |
+|   **StringBuilder** |                **a** |         **a** |   **0.6979 ns** | **0.0071 ns** | **0.0063 ns** |      **-** |     **-** |     **-** |         **-** |
+| &#39;SB Refactored&#39; |                a |         a |   0.5028 ns | 0.0033 ns | 0.0031 ns |      - |     - |     - |         - |
+|   **StringBuilder** |      **aabcccccaaa** |  **a2b1c5a3** | **238.3602 ns** | **0.4394 ns** | **0.4110 ns** | **0.0076** |     **-** |     **-** |     **144 B** |
+| &#39;SB Refactored&#39; |      aabcccccaaa |  a2b1c5a3 | 243.8392 ns | 0.6603 ns | 0.6177 ns | 0.0076 |     - |     - |     144 B |
+|   **StringBuilder** | **aabccccccccccaaa** | **a2b1c10a3** | **246.3230 ns** | **0.6602 ns** | **0.6175 ns** | **0.0081** |     **-** |     **-** |     **152 B** |
+| &#39;SB Refactored&#39; | aabccccccccccaaa | a2b1c10a3 | 257.2566 ns | 0.2299 ns | 0.2038 ns | 0.0081 |     - |     - |     152 B |
+|   **StringBuilder** |               **ab** |        **ab** | **115.3873 ns** | **0.1424 ns** | **0.1262 ns** | **0.0041** |     **-** |     **-** |      **80 B** |
+| &#39;SB Refactored&#39; |               ab |        ab |  73.3115 ns | 0.6902 ns | 0.5764 ns | 0.0042 |     - |     - |      80 B |
+|   **StringBuilder** |              **abc** |       **abc** | **246.8339 ns** | **0.3069 ns** | **0.2562 ns** | **0.0091** |     **-** |     **-** |     **176 B** |
+| &#39;SB Refactored&#39; |              abc |       abc | 119.0472 ns | 0.2435 ns | 0.2278 ns | 0.0045 |     - |     - |      88 B |
