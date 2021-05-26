@@ -26,7 +26,7 @@ namespace CrackingTheCodingInterview.BitManipulation.Insertion
         //}
 
         [Benchmark]
-        [Arguments(nameof(Data))]
+        [ArgumentsSource(nameof(Data))]
         public int SecondTry(int N, int M, int i, int j, int expected)
         {
             var mask = (-1 << (j + 1));
@@ -45,7 +45,7 @@ namespace CrackingTheCodingInterview.BitManipulation.Insertion
         }
 
         [Benchmark]
-        [Arguments(nameof(Data))]
+        [ArgumentsSource(nameof(Data))]
         public int ThirdTry(int N, int M, int i, int j, int expected)
         {
             int allOnes = ~0;
